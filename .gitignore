@@ -1,0 +1,12 @@
+# Yarn
+node_modules
+yarn-error.log
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# JetBrains
+.idea

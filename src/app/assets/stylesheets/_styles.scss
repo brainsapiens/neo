@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// 1. Sticky footer
+
+html {
+    font-size: 62.5%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    &.mod_flexboxtweener { // 1
+        height: 100%;
+    }
+}
+
+body {
+    @include text-md;
+
+    display: flex; // 1
+    flex-direction: column; // 1
+    min-height: 100vh;
+    background: #fff;
+    color: $color-base;
+    font-family: $font-family-text;
+    font-weight: $font-weight-text;
+
+    .mod_flexboxtweener & { // 1
+        height: 100%;
+    }
+}
+
+main { // 1
+    flex: 1;
+
+    .mod_flexboxtweener & {
+        flex: 1 0 auto;
+    }
+}
+
+a {
+    color: $color-link;
+    transition: all $transition-duration-base;
+}
+
+button,
+input,
+select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+select {
+    border-radius: 0;
+
+    &::-ms-expand { // IE11
+        display: none;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+h1 {
+    @include h1;
+
+    margin: 0;
+}
+
+h2 {
+    @include h2;
+}
+
+h3 {
+    @include h3;
+}
+
+h4 {
+    @include h4;
+}
+
+h5 {
+    @include h5;
+}
+
+h6 {
+    @include h6;
+}
+
+hr {
+    border: none;
+}
+
+iframe {
+    border: none;
+}
+
+img {
+    max-width: 100%;
+
+    &[width],
+    &[height] {
+        max-width: none;
+    }
+}
+
+figure {
+    margin: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+small {
+    @include text-sm;
+}
+
+svg {
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+:disabled {
+    cursor: not-allowed;
+}

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@if $enable-inputs == true {
+    .input {
+        > input {
+            display: block;
+            width: 100%;
+            padding: .5rem .75rem;
+            border: 1px solid $color-lightest;
+
+            &:disabled {
+                opacity: .2;
+            }
+        }
+
+        &.input--invalid {
+            > input {
+                border-color: $color-error;
+            }
+        }
+    }
+}

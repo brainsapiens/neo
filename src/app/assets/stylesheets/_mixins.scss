@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+// Media queries
+@mixin mq($mq-breakpoint) {
+    @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+        $mq-device: "";
+        @if $enable-mq-device == true {
+            $mq-device: "-device";
+        }
+
+        $mq-range: "min";
+        @if $mq-breakpoint == nth(map-keys($mq-breakpoints), 1) {
+            $mq-range: "max";
+        }
+
+        @media all and (#{$mq-range}#{$mq-device}-width: map-get($mq-breakpoints, $mq-breakpoint)) {
+            @content;
+        }
+    }
+}
+
+@mixin mq-custom($mq-range, $mq-breakpoint) {
+    $mq-device: "";
+    @if $enable-mq-device == true {
+        $mq-device: "-device";
+    }
+
+    @media all and (#{$mq-range}#{$mq-device}-width: $mq-breakpoint) {
+        @content;
+    }
+}
+
+// Container
+@mixin container {
+    margin-right: auto;
+    margin-left: auto;
+
+    @if $enable-mq == true {
+        @each $mq-container-width in $mq-container-widths {
+            $mq: nth($mq-container-width, 1);
+            $container-width: nth($mq-container-width, 2);
+
+            @include mq($mq) {
+                max-width: $container-width;
+            }
+        }
+
+        @each $mq-container-indent in $mq-container-indents {
+            $mq: nth($mq-container-indent, 1);
+            $container-indent: nth($mq-container-indent, 2);
+
+            @include mq($mq) {
+                padding-right: $container-indent;
+                padding-left: $container-indent;
+            }
+        }
+    } @else {
+        max-width: $container-width;
+        padding-right: $container-indent;
+        padding-left: $container-indent;
+    }
+}
+
+// Grid
+@mixin grid($main-axis: x, $justify-content: flex-start, $align-items: flex-start, $multiplier: 1) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+
+    @if $main-axis == x {
+        flex-flow: row wrap;
+    }
+
+    @if $main-axis == y {
+        flex-flow: column nowrap;
+    }
+
+    @if $enable-mq == true {
+        @each $mq-grid-gutter in $mq-grid-gutters {
+            $mq: nth($mq-grid-gutter, 1);
+            $gutter: -#{nth($mq-grid-gutter, 2) / 2 * $multiplier};
+
+            @include mq($mq) {
+                margin-right: $gutter;
+                margin-left: $gutter;
+            }
+        }
+    } @else {
+        $gutter: -$grid-gutter / 2;
+
+        margin-right: $gutter;
+        margin-left: $gutter;
+    }
+}
+
+// Grid col
+@mixin grid-col($multiplier: 1) {
+    @if $enable-mq == true {
+        @each $mq-grid-gutter in $mq-grid-gutters {
+            $mq: nth($mq-grid-gutter, 1);
+            $gutter: nth($mq-grid-gutter, 2) / 2 * $multiplier;
+
+            @include mq($mq) {
+                padding-right: $gutter;
+                padding-left: $gutter;
+            }
+        }
+    } @else {
+        $gutter: $grid-gutter / 2;
+
+        padding-right: $gutter * $multiplier;
+        padding-left: $gutter * $multiplier;
+    }
+}
+
+// Col size
+@mixin col-size($size) {
+    width: $size * 100%;
+}
+
+// Ellipsis
+// https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_ellipsis.scss
+@mixin ellipsis($width: 100%, $display: inline-block) {
+    display: $display;
+    max-width: $width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+// Font
+@mixin font($font-size, $line-height: $font-size) {
+    font-size: $font-size;
+    line-height: strip-units($line-height) / strip-units($font-size);
+}
+
+// Interact
+@mixin interact($properties-list, $values-list, $state: hover) {
+    $properties-length: length($properties-list);
+    $values-length: length($values-list);
+
+    @if $properties-length == $values-length {
+        .mod_no-touchevents & {
+            @if $enable-interact-multiple == true {
+                &:#{$state},
+                &.#{$state} {
+                    @for $i from 1 through $properties-length {
+                        #{nth($properties-list, $i)}: nth($values-list, $i);
+                    }
+                }
+            } @else {
+                &:#{$state} {
+                    @for $i from 1 through $properties-length {
+                        #{nth($properties-list, $i)}: nth($values-list, $i);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Size
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// Text
+@mixin text-lg {
+    @include font(2rem, 2.5rem);
+}
+
+@mixin text-md {
+    @include font(1.5rem, 2rem);
+}
+
+@mixin text-sm {
+    @include font(1rem, 1.5rem);
+}
+
+// Headers
+@mixin h {
+    font-family: $font-family-title;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+@mixin h1($font-weight: $font-weight-title) {
+    @include h;
+    @include font(6rem);
+
+    font-weight: $font-weight;
+}
+
+@mixin h2($font-weight: $font-weight-title) {
+    @include h;
+    @include font(5rem);
+
+    font-weight: $font-weight;
+}
+
+@mixin h3($font-weight: $font-weight-title) {
+    @include h;
+    @include font(4rem);
+
+    font-weight: $font-weight;
+}
+
+@mixin h4($font-weight: $font-weight-title) {
+    @include h;
+    @include font(3rem);
+
+    font-weight: $font-weight;
+}
+
+@mixin h5($font-weight: $font-weight-title) {
+    @include h;
+    @include text-lg;
+
+    font-weight: $font-weight;
+}
+
+@mixin h6($font-weight: $font-weight-title) {
+    @include h;
+    @include text-md;
+
+    font-weight: $font-weight;
+}

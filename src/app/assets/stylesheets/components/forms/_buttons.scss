@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+@if $enable-buttons == true {
+    .button {
+        display: inline-block;
+        padding: .5rem 1.5rem;
+        background: $color-light;
+        color: #fff;
+        text-align: center;
+
+        @at-root a#{&} {
+            text-decoration: none;
+        }
+
+        &:disabled {
+            opacity: .2;
+        }
+
+        &.button--block {
+            display: block;
+            width: 100%;
+        }
+    }
+}

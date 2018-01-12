@@ -1,0 +1,57 @@
+{
+  "extends": "stylelint-config-standard",
+
+  "rules": {
+    "at-rule-no-unknown": [ true, {
+      "ignoreAtRules": [
+        "at-root",
+        "content",
+        "each",
+        "else",
+        "error",
+        "for",
+        "function",
+        "if",
+        "include",
+        "mixin",
+        "return"
+      ]
+    } ],
+
+    "at-rule-empty-line-before": [ "always", {
+      "ignoreAtRules": [
+        "at-root",
+        "content",
+        "each",
+        "else",
+        "error",
+        "for",
+        "function",
+        "if",
+        "include",
+        "mixin",
+        "return"
+      ]
+    } ],
+
+    "block-closing-brace-newline-after": [ "always", {
+      "ignoreAtRules": [
+        "at-root",
+        "content",
+        "each",
+        "else",
+        "error",
+        "for",
+        "function",
+        "if",
+        "include",
+        "mixin",
+        "return"
+      ]
+    } ],
+
+    "number-leading-zero": "never",
+
+    "indentation": 4
+  }
+}

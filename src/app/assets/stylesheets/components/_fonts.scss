@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+@if $enable-fonts == true {
+    // Ruble sans
+    @if $enable-fonts-ruble-sans == true {
+
+        @font-face {
+            src: url("../fonts/rub/arial/alsrubl-arial-regular.woff") format("woff");
+            font-family: ALSRubl-Arial;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        @font-face {
+            src: url("../fonts/rub/arial/alsrubl-arial-italic.woff") format("woff");
+            font-family: ALSRubl-Arial;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        @font-face {
+            src: url("../fonts/rub/arial/alsrubl-arial-bold.woff") format("woff");
+            font-family: ALSRubl-Arial;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        @font-face {
+            src: url("../fonts/rub/arial/alsrubl-arial-bolditalic.woff") format("woff");
+            font-family: ALSRubl-Arial;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .rub-sans {
+            font-family: ALSRubl-Arial, Arial, sans-serif;
+            line-height: normal;
+        }
+    }
+
+    // Ruble serif
+    @if $enable-fonts-ruble-serif == true {
+
+        @font-face {
+            src: url("../fonts/rub/times/alsrubl-times-regular.woff") format("woff");
+            font-family: ALSRubl-Times;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        @font-face {
+            src: url("../fonts/rub/times/alsrubl-times-italic.woff") format("woff");
+            font-family: ALSRubl-Times;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        @font-face {
+            src: url("../fonts/rub/times/alsrubl-times-bold.woff") format("woff");
+            font-family: ALSRubl-Times;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        @font-face {
+            src: url("../fonts/rub/times/alsrubl-times-bolditalic.woff") format("woff");
+            font-family: ALSRubl-Times;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .rub-serif {
+            font-family: ALSRubl-Times, "Times New Roman", Times, serif;
+            line-height: normal;
+        }
+    }
+}

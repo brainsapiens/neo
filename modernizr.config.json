@@ -1,0 +1,11 @@
+{
+  "classPrefix": "mod_",
+  "options": [
+    "mq",
+    "setClasses"
+  ],
+  "feature-detects": [
+    "css/flexboxtweener",
+    "touchevents"
+  ]
+}

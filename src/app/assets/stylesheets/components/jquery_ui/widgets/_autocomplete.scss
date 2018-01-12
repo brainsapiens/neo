@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+@if $enable-jquery-ui-autocomplete == true {
+    .ui-autocomplete-input {
+        &.ui-autocomplete-input-opened {
+            // Styles
+        }
+    }
+
+    .ui-autocomplete {
+        position: absolute;
+        z-index: 1001;
+        max-height: 20rem;
+        overflow-y: auto;
+        background: #fff;
+        border-right: 1px solid $color-lightest;
+        border-bottom: 1px solid $color-lightest;
+        border-left: 1px solid $color-lightest;
+
+        .ui-menu-item-wrapper {
+            padding: .5rem .75rem;
+
+            &.ui-state-active {
+                background: #eee;
+            }
+        }
+    }
+}

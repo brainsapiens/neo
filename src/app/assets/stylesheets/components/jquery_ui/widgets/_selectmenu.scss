@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+@if $enable-jquery-ui-selectmenu == true {
+    .ui-selectmenu-button {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: .5rem 2.5rem .5rem .75rem;
+        border: 1px solid $color-lightest;
+        cursor: default;
+
+        &.ui-selectmenu-button-open {
+            outline: none;
+        }
+
+        .ui-selectmenu-icon {
+            @include size(0);
+
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            display: block;
+            pointer-events: none;
+            border-top: .4rem solid $color-lighter;
+            border-right: .4rem solid transparent;
+            border-left: .4rem solid transparent;
+        }
+
+        .ui-selectmenu-text {
+            @include ellipsis;
+
+            vertical-align: top;
+
+            &.ui-state-placeholder {
+                color: $color-lighter;
+            }
+        }
+    }
+
+    .ui-selectmenu-menu {
+        position: absolute;
+        z-index: 1001;
+        display: none;
+
+        &.ui-selectmenu-open {
+            display: block;
+        }
+
+        .ui-menu {
+            max-height: calc(14.5rem + 1px);
+            background: #fff;
+            border-right: 1px solid $color-lightest;
+            border-bottom: 1px solid $color-lightest;
+            border-left: 1px solid $color-lightest;
+            overflow: auto;
+        }
+
+        .ui-menu-item {
+            &.ui-state-disabled {
+                display: none;
+            }
+        }
+
+        .ui-menu-item-wrapper {
+            padding: .5rem .75rem;
+
+            &.ui-state-active {
+                background: #eee;
+            }
+        }
+    }
+}

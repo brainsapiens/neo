@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+@if $enable-checkboxes == true {
+    .checkbox {
+        @include size($checkbox-size);
+
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+
+        &__tag {
+            @include size(100%);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            opacity: 0;
+
+            + .checkbox__box {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                background: #fff;
+                border: 1px solid $color-lightest;
+
+                &::after {
+                    @include size(0);
+
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: $color-base;
+                    content: "";
+                    transition: all $transition-duration-base;
+                }
+            }
+
+            &:checked {
+                + .checkbox__box {
+                    &::after {
+                        @include size($checkbox-size / 2);
+                    }
+                }
+            }
+
+            &:disabled {
+                + .checkbox__box {
+                    opacity: .2;
+                }
+            }
+        }
+
+        &.checkbox--invalid {
+            > .checkbox__tag + .checkbox__box {
+                border-color: $color-error;
+            }
+        }
+    }
+}

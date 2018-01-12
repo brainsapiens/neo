@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+// Media queries
+$enable-mq: true;
+$enable-mq-device: false;
+
+// Interact multiple
+$enable-interact-multiple: true;
+
+// Components
+$enable-jquery-ui-core: true;
+$enable-jquery-ui-autocomplete: true;
+$enable-jquery-ui-datepicker: true;
+$enable-jquery-ui-selectmenu: true;
+
+$enable-buttons: true;
+$enable-inputs: true;
+$enable-selects: true;
+$enable-textareas: true;
+$enable-checkboxes: true;
+$enable-radios: true;
+$enable-labels: true;
+
+$enable-fonts: true;
+$enable-fonts-ruble-sans: true;
+$enable-fonts-ruble-serif: true;
+$enable-icons: true;
+$enable-links: true;
+$enable-wysiwyg: true;

@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+// Responsive
+$mq-breakpoints: (// for example: xs, sm, md, lg, xl
+    "sm": 767px,
+    "md": 768px,
+    "lg": 1025px
+);
+
+$mq-indents: (
+    "sm": 1rem,
+    "md": 2rem,
+    "lg": 3rem
+);
+
+$mq-container-widths: (
+    "sm": 100%,
+    "md": 100%,
+    "lg": 1440px
+);
+
+$mq-container-indents: (
+    "sm": map-get($mq-indents, "sm"),
+    "md": map-get($mq-indents, "md"),
+    "lg": map-get($mq-indents, "lg")
+);
+
+$mq-grid-gutters: (
+    "sm": map-get($mq-indents, "sm"),
+    "md": map-get($mq-indents, "md"),
+    "lg": map-get($mq-indents, "lg")
+);
+
+// Not responsive
+$indent: 2rem;
+
+$container-width: 1440px;
+$container-indent: $indent;
+
+$grid-gutter: $indent;
+
+// Border radius
+$border-radius-sm: .25rem;
+$border-radius-md: .5rem;
+$border-radius-lg: .75rem;
+
+// Colors
+$color-base: #000;
+$color-light: rgba($color-base, .8);
+$color-lighter: rgba($color-base, .6);
+$color-lightest: rgba($color-base, .4);
+
+$color-brand: $color-base;
+
+$color-error: #f00;
+$color-warning: #f90;
+$color-success: #390;
+
+// Fonts
+$font-family-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$font-family-title: $font-family-text;
+$font-weight-text: 400;
+$font-weight-title: 700;
+
+// Forms
+$checkbox-size: 2rem;
+$radio-size: 2rem;
+
+// Links
+$color-link: #369;
+
+// Transitions
+$transition-duration-base: .2s;

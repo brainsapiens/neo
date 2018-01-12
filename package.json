@@ -1,0 +1,38 @@
+{
+  "name": "neo2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.2.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "5.0.0",
+    "gulp-eslint": "^4.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-posthtml": "^3.0.2",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-stylelint": "^6.0.0",
+    "gulp-uglify": "^3.0.0",
+    "postcss-clean": "^1.1.0",
+    "posthtml-w3c": "^0.8.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0"
+  },
+  "dependencies": {
+    "fontfaceobserver": "^2.0.13",
+    "jquery": "^3.2.1",
+    "jquery-ui-dist": "^1.12.1",
+    "modernizr": "^3.5.0",
+    "normalize.css": "^7.0.0",
+    "svg4everybody": "^2.1.9"
+  }
+}

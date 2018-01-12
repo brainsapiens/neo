@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@if $enable-selects == true {
+    .select {
+        position: relative;
+
+        &__tag {
+            display: block;
+            width: 100%;
+            padding: .5rem 2.5rem .5rem .75rem;
+            border: 1px solid $color-lightest;
+
+            + .select__arrow {
+                @include size(0);
+
+                position: absolute;
+                top: 50%;
+                right: 1rem;
+                transform: translateY(-50%);
+                display: block;
+                pointer-events: none;
+                border-top: .4rem solid $color-lighter;
+                border-right: .4rem solid transparent;
+                border-left: .4rem solid transparent;
+            }
+
+            &:disabled {
+                opacity: .2;
+            }
+        }
+
+        &.select--invalid {
+            > .select__tag {
+                border-color: $color-error;
+            }
+        }
+    }
+}
