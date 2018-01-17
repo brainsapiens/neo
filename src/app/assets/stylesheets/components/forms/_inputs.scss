@@ -11,6 +11,14 @@
             &:disabled {
                 opacity: .2;
             }
+
+            @if $enable-jquery-ui-datepicker == true {
+                &.hasDatepicker {
+                    &.hasDatepickerFocus {
+                        // Styles
+                    }
+                }
+            }
         }
 
         &.input--invalid {

@@ -324,10 +324,6 @@ table {
   cursor: default;
 }
 
-.ui-selectmenu-button.ui-selectmenu-button-open {
-  outline: none;
-}
-
 .ui-selectmenu-button .ui-selectmenu-icon {
   width: 0;
   height: 0;
