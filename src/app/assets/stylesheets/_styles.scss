@@ -33,6 +33,10 @@ body {
     font-family: $font-family-text;
     font-weight: $font-weight-text;
 
+    @if $enable-mq == false {
+        min-width: $width;
+    }
+
     .mod_flexboxtweener & { // 1
         height: 100%;
     }

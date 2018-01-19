@@ -32,9 +32,10 @@ $mq-grid-gutters: (
 );
 
 // Not responsive
+$width: 1220px;
 $indent: 2rem;
 
-$container-width: 1440px;
+$container-width: $width;
 $container-indent: $indent;
 
 $grid-gutter: $indent;
