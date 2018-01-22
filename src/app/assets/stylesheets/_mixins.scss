@@ -86,7 +86,7 @@
             }
         }
     } @else {
-        $gutter: -$grid-gutter / 2;
+        $gutter: -$grid-gutter / 2 * $multiplier;
 
         margin-right: $gutter;
         margin-left: $gutter;
