@@ -8,6 +8,7 @@
     "jquery": true
   },
   "globals": {
+    "FontFaceObserver": true,
     "Modernizr": true,
     "svg4everybody": true
   },

@@ -201,7 +201,7 @@ if (enable.components.fonts === true) {
         var fontALSRublArial = new FontFaceObserver('ALSRubl-Arial');
 
         fontALSRublArial.load().then(function () {
-            console.log('ALSRubl-Arial has loaded.');
+            // console.log('ALSRubl-Arial has loaded.');
         });
     }
 
@@ -209,7 +209,7 @@ if (enable.components.fonts === true) {
         var fontALSRublTimes = new FontFaceObserver('ALSRubl-Times');
 
         fontALSRublTimes.load().then(function () {
-            console.log('ALSRubl-Times has loaded.');
+            // console.log('ALSRubl-Times has loaded.');
         });
     }
 }

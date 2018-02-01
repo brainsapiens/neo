@@ -6,7 +6,7 @@ if (enable.components.fonts === true) {
         fontALSRublArial
             .load()
             .then(function () {
-                console.log('ALSRubl-Arial has loaded.');
+                // console.log('ALSRubl-Arial has loaded.');
             });
     }
 
@@ -16,7 +16,7 @@ if (enable.components.fonts === true) {
         fontALSRublTimes
             .load()
             .then(function () {
-                console.log('ALSRubl-Times has loaded.');
+                // console.log('ALSRubl-Times has loaded.');
             });
     }
 

@@ -118,6 +118,12 @@
     width: $size * 100%;
 }
 
+// Col center
+@mixin col-center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 // Ellipsis
 // https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_ellipsis.scss
 @mixin ellipsis($width: 100%, $display: inline-block) {

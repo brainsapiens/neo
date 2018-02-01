@@ -1,15 +1,5 @@
 @charset "UTF-8";
 
-@mixin wysiwyg-indents-sm {
-    &:not(:first-child) {
-        margin-top: 1rem;
-    }
-
-    &:not(:last-child) {
-        margin-bottom: 1rem;
-    }
-}
-
 @mixin wysiwyg-indents-md {
     &:not(:first-child) {
         margin-top: 2rem;
@@ -126,7 +116,9 @@
 
             ol,
             ul {
-                @include wysiwyg-indents-sm;
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
             }
 
             li {
