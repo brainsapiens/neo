@@ -124,11 +124,7 @@ export function files() {
 
 // Server
 export function connectServer() {
-    connect.server({
-        port: 1111,
-        root: "dist/",
-        livereload: true
-    });
+    connect.server(config.options.connect);
 }
 
 // Watch

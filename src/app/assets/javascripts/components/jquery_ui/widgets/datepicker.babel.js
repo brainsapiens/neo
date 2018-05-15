@@ -60,7 +60,7 @@ if (enable.jQueryUI.datepicker === true) {
         }
     });
 
-    $(window).smartresize(function () {
+    $(window).on('optimizedResize', function () {
         $datepicker.datepicker('hide');
     });
 }

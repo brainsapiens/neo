@@ -4,3 +4,6 @@ const mqBreakpoints = [
     ['md', 768],
     ['lg', 1025]
 ];
+
+// Not responsive
+const mqDeviceWidth = 1220;

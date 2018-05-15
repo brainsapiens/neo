@@ -21,7 +21,7 @@ if (enable.jQueryUI.selectmenu === true) {
         }
     });
 
-    $(window).smartresize(function () {
+    $(window).on('optimizedResize', function () {
         $selectmenu.selectmenu('close');
     });
 }

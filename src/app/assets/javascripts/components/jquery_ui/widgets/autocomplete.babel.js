@@ -35,7 +35,7 @@ if (enable.jQueryUI.autocomplete === true) {
         }
     });
 
-    $(window).smartresize(function () {
+    $(window).on('optimizedResize', function () {
         $autocomplete.autocomplete('close');
     });
 }

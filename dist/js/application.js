@@ -24,7 +24,19 @@ var enable = {
 
 // Responsive
 var mqBreakpoints = [['sm', 767], ['md', 768], ['lg', 1025]];
+
+// Not responsive
+var mqDeviceWidth = 1220;
 'use strict';
+
+// Viewport
+if (enable.mqDevice) {
+    var viewport = document.querySelector('meta[name="viewport"]');
+
+    if (screen.width >= mqDeviceWidth) {
+        viewport.setAttribute('content', 'width=' + mqDeviceWidth);
+    }
+}
 
 // Create mq
 var mq = {};
@@ -61,31 +73,27 @@ if (enable.interactMultiple) {
     interactMultiple('.js-hover', 'hover', 'active');
 }
 
-// Debounced Resize() jQuery Plugin
-// https://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
-(function ($, sr) {
-    var debounce = function debounce(func, threshold, execAsap) {
-        var timeout;
-
-        return function debounced() {
-            var obj = this;
-            var args = arguments;
-
-            function delayed() {
-                if (!execAsap) func.apply(obj, args);
-                timeout = null;
+// Optimized resize
+// https://developer.mozilla.org/ru/docs/Web/Events/resize
+(function () {
+    var throttle = function throttle(type, name, obj) {
+        obj = obj || window;
+        var running = false;
+        var func = function func() {
+            if (running) {
+                return;
             }
-
-            if (timeout) clearTimeout(timeout);else if (execAsap) func.apply(obj, args);
-
-            timeout = setTimeout(delayed, threshold || 100);
+            running = true;
+            requestAnimationFrame(function () {
+                obj.dispatchEvent(new CustomEvent(name));
+                running = false;
+            });
         };
+        obj.addEventListener(type, func);
     };
 
-    jQuery.fn[sr] = function (fn) {
-        return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);
-    };
-})(jQuery, 'smartresize');
+    throttle('resize', 'optimizedResize');
+})();
 'use strict';
 
 if (enable.jQueryUI.autocomplete === true) {
@@ -102,7 +110,7 @@ if (enable.jQueryUI.autocomplete === true) {
         }
     });
 
-    $(window).smartresize(function () {
+    $(window).on('optimizedResize', function () {
         $autocomplete.autocomplete('close');
     });
 }
@@ -167,7 +175,7 @@ if (enable.jQueryUI.datepicker === true) {
         }
     });
 
-    $(window).smartresize(function () {
+    $(window).on('optimizedResize', function () {
         $datepicker.datepicker('hide');
     });
 }
@@ -189,7 +197,7 @@ if (enable.jQueryUI.selectmenu === true) {
         }
     });
 
-    $(window).smartresize(function () {
+    $(window).on('optimizedResize', function () {
         $selectmenu.selectmenu('close');
     });
 }

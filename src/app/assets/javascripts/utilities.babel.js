@@ -1,3 +1,12 @@
+// Viewport
+if (enable.mqDevice) {
+    const viewport = document.querySelector('meta[name="viewport"]');
+
+    if (screen.width >= mqDeviceWidth) {
+        viewport.setAttribute('content', 'width=' + mqDeviceWidth);
+    }
+}
+
 // Create mq
 const mq = {};
 
@@ -39,33 +48,22 @@ if (enable.interactMultiple) {
     interactMultiple('.js-hover', 'hover', 'active');
 }
 
-// Debounced Resize() jQuery Plugin
-// https://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
-(function ($, sr) {
-    var debounce = function (func, threshold, execAsap) {
-        var timeout;
-
-        return function debounced() {
-            var obj = this;
-            var args = arguments;
-
-            function delayed() {
-                if (!execAsap)
-                    func.apply(obj, args);
-                timeout = null;
-            }
-
-            if (timeout)
-                clearTimeout(timeout);
-            else if (execAsap)
-                func.apply(obj, args);
-
-            timeout = setTimeout(delayed, threshold || 100);
+// Optimized resize
+// https://developer.mozilla.org/ru/docs/Web/Events/resize
+(function() {
+    var throttle = function(type, name, obj) {
+        obj = obj || window;
+        var running = false;
+        var func = function() {
+            if (running) { return; }
+            running = true;
+             requestAnimationFrame(function() {
+                obj.dispatchEvent(new CustomEvent(name));
+                running = false;
+            });
         };
+        obj.addEventListener(type, func);
     };
 
-    jQuery.fn[sr] = function (fn) {
-        return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);
-    };
-
-})(jQuery, 'smartresize');
+    throttle('resize', 'optimizedResize');
+})();
