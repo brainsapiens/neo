@@ -2,8 +2,8 @@
 if (enable.mqDevice) {
     const viewport = document.querySelector('meta[name="viewport"]');
 
-    if (screen.width >= mqDeviceWidth) {
-        viewport.setAttribute('content', 'width=' + mqDeviceWidth);
+    if (screen.width >= mqBreakpoints[0][1]) {
+        viewport.setAttribute('content', 'width=' + viewportWidth);
     }
 }
 

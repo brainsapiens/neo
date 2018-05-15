@@ -2,7 +2,7 @@
 
 var enable = {
     mq: true,
-    mqDevice: true,
+    mqDevice: false,
 
     interactMultiple: true,
 
@@ -26,15 +26,15 @@ var enable = {
 var mqBreakpoints = [['sm', 767], ['md', 768], ['lg', 1025]];
 
 // Not responsive
-var mqDeviceWidth = 1220;
+var viewportWidth = 1220;
 'use strict';
 
 // Viewport
 if (enable.mqDevice) {
     var viewport = document.querySelector('meta[name="viewport"]');
 
-    if (screen.width >= mqDeviceWidth) {
-        viewport.setAttribute('content', 'width=' + mqDeviceWidth);
+    if (screen.width >= mqBreakpoints[0][1]) {
+        viewport.setAttribute('content', 'width=' + viewportWidth);
     }
 }
 

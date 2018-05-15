@@ -33,6 +33,7 @@
     "jquery-ui-dist": "^1.12.1",
     "modernizr": "^3.5.0",
     "normalize.css": "^8.0.0",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.1.9",
+    "util": "^0.10.3"
   }
 }
