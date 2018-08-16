@@ -6,6 +6,7 @@
   ],
   "feature-detects": [
     "css/flexboxtweener",
+    "css/objectfit",
     "touchevents"
   ]
 }

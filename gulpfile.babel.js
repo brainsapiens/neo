@@ -110,7 +110,7 @@ export function images() {
             imagemin.gifsicle(config.options.imagemin.gifsicle),
             imagemin.jpegtran(config.options.imagemin.jpegtran),
             imagemin.optipng(config.options.imagemin.optipng),
-            imagemin.svgo(config.options.imagemin.svgo) // {cleanupIDs: false} to keep <symbol>
+            imagemin.svgo(config.options.imagemin.svgo)
         ]))
         .pipe(gulp.dest(config.paths.images.dest))
         .pipe(connect.reload());
