@@ -232,11 +232,12 @@ if (enable.components.wysiwyg === true) {
     var $wysiwyg = $('.js-wysiwyg');
 
     // Img
+    $wysiwyg.find('img').each(function () {
+        $(this).removeAttr('width height');
+    });
+
     $wysiwyg.find('> p > img').each(function () {
-        $(this).css({
-            height: '',
-            width: ''
-        }).unwrap();
+        $(this).unwrap();
     });
 
     // Table
