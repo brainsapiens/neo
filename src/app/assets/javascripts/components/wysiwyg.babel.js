@@ -3,14 +3,18 @@ if (enable.components.wysiwyg === true) {
 
     // Img
     $wysiwyg
+        .find('img')
+        .each(function () {
+            $(this).css({
+                height: '',
+                width: ''
+            });
+        });
+
+    $wysiwyg
         .find('> p > img')
         .each(function () {
-            $(this)
-                .css({
-                    height: '',
-                    width: ''
-                })
-                .unwrap();
+            $(this).unwrap();
         });
 
     // Table

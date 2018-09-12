@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@mixin wysiwyg-indents-md {
+@mixin wysiwyg-indents-sm {
     &:not(:first-child) {
         margin-top: 2rem;
     }
@@ -60,6 +60,8 @@
 
         // Images
         > img {
+            @include wysiwyg-indents-lg;
+
             display: block;
         }
 
@@ -76,13 +78,9 @@
             }
         }
 
-        > img {
-            @include wysiwyg-indents-lg;
-        }
-
         // Lists
         > dl {
-            @include wysiwyg-indents-md;
+            @include wysiwyg-indents-sm;
 
             > dt {
                 margin-bottom: 1rem;
@@ -112,7 +110,7 @@
                 list-style: disc;
             }
 
-            @include wysiwyg-indents-md;
+            @include wysiwyg-indents-sm;
 
             ol,
             ul {
@@ -129,7 +127,7 @@
 
         // Paragraphs
         > p {
-            @include wysiwyg-indents-md;
+            @include wysiwyg-indents-sm;
         }
 
         // Table
