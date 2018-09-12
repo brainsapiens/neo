@@ -5,10 +5,7 @@ if (enable.components.wysiwyg === true) {
     $wysiwyg
         .find('img')
         .each(function () {
-            $(this).css({
-                height: '',
-                width: ''
-            });
+            $(this).removeAttr('width height');
         });
 
     $wysiwyg
