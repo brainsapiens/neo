@@ -8,7 +8,7 @@
             display: block;
             width: 100%;
             padding: .5rem 2.5rem .5rem .75rem;
-            border: 1px solid $color-lightest;
+            border: 1px solid $color-minor;
 
             + .select__arrow {
                 @include size(0);
@@ -19,7 +19,7 @@
                 transform: translateY(-50%);
                 display: block;
                 pointer-events: none;
-                border-top: .4rem solid $color-lighter;
+                border-top: .4rem solid $color-muted;
                 border-right: .4rem solid transparent;
                 border-left: .4rem solid transparent;
             }

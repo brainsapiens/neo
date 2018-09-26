@@ -6,7 +6,7 @@
         display: block;
         width: 100%;
         padding: .5rem 2.5rem .5rem .75rem;
-        border: 1px solid $color-lightest;
+        border: 1px solid $color-minor;
         cursor: default;
 
         &.ui-selectmenu-button-open {
@@ -22,7 +22,7 @@
             transform: translateY(-50%);
             display: block;
             pointer-events: none;
-            border-top: .4rem solid $color-lighter;
+            border-top: .4rem solid $color-muted;
             border-right: .4rem solid transparent;
             border-left: .4rem solid transparent;
         }
@@ -33,7 +33,7 @@
             vertical-align: top;
 
             &.ui-state-placeholder {
-                color: $color-lighter;
+                color: $color-muted;
             }
         }
     }
@@ -50,9 +50,9 @@
         .ui-menu {
             max-height: calc(14.5rem + 1px);
             background: #fff;
-            border-right: 1px solid $color-lightest;
-            border-bottom: 1px solid $color-lightest;
-            border-left: 1px solid $color-lightest;
+            border-right: 1px solid $color-minor;
+            border-bottom: 1px solid $color-minor;
+            border-left: 1px solid $color-minor;
             overflow: auto;
         }
 

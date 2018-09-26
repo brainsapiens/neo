@@ -94,7 +94,10 @@
 }
 
 // Grid col
-@mixin grid-col($multiplier: 1) {
+@mixin grid-col($size, $multiplier: 1) {
+    flex: 0 0 $size * 100%;
+    max-width: $size * 100%;
+
     @if $enable-mq == true {
         @each $mq-grid-gutter in $mq-grid-gutters {
             $mq: nth($mq-grid-gutter, 1);
@@ -187,51 +190,58 @@
 
 // Headings
 @mixin h {
-    font-family: $font-family-title;
+    font-family: $font-family-alt;
 
     a {
         text-decoration: none;
     }
 }
 
-@mixin h1($font-weight: $font-weight-title) {
+@mixin h1($font-weight: $font-weight-solid) {
     @include h;
     @include font(6rem);
 
     font-weight: $font-weight;
 }
 
-@mixin h2($font-weight: $font-weight-title) {
+@mixin h2($font-weight: $font-weight-solid) {
     @include h;
     @include font(5rem);
 
     font-weight: $font-weight;
 }
 
-@mixin h3($font-weight: $font-weight-title) {
+@mixin h3($font-weight: $font-weight-solid) {
     @include h;
     @include font(4rem);
 
     font-weight: $font-weight;
 }
 
-@mixin h4($font-weight: $font-weight-title) {
+@mixin h4($font-weight: $font-weight-solid) {
     @include h;
     @include font(3rem);
 
     font-weight: $font-weight;
 }
 
-@mixin h5($font-weight: $font-weight-title) {
+@mixin h5($font-weight: $font-weight-solid) {
     @include h;
     @include text-lg;
 
     font-weight: $font-weight;
 }
 
-@mixin h6($font-weight: $font-weight-title) {
+@mixin h6($font-weight: $font-weight-solid) {
     @include h;
     @include text-md;
 
     font-weight: $font-weight;
+}
+
+// Links
+@mixin link-base {
+    @include interact(color, darken($color-link, 20%));
+
+    color: $color-link;
 }

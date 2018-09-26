@@ -7,9 +7,9 @@
         display: none;
         padding: .75rem 1rem 1rem;
         background: #fff;
-        border-right: 1px solid $color-lightest;
-        border-bottom: 1px solid $color-lightest;
-        border-left: 1px solid $color-lightest;
+        border-right: 1px solid $color-minor;
+        border-bottom: 1px solid $color-minor;
+        border-left: 1px solid $color-minor;
 
         .ui-datepicker-header {
             display: flex;
@@ -25,7 +25,7 @@
                     display: block;
                     border-top: .5rem solid transparent;
                     border-bottom: .5rem solid transparent;
-                    border-right: .75rem solid $color-lighter;
+                    border-right: .75rem solid $color-muted;
                 }
             }
 
@@ -45,7 +45,7 @@
                     display: block;
                     border-top: .5rem solid transparent;
                     border-bottom: .5rem solid transparent;
-                    border-left: .75rem solid $color-lighter;
+                    border-left: .75rem solid $color-muted;
                 }
             }
         }

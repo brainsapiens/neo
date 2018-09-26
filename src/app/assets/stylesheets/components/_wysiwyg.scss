@@ -43,7 +43,7 @@
             @include wysiwyg-indents-lg;
 
             padding-left: 4rem;
-            border-left: 1px solid $color-lightest;
+            border-left: 1px solid $color-minor;
 
             > p {
                 @include text-lg;
@@ -74,7 +74,7 @@
 
             > figcaption {
                 margin-top: 1rem;
-                color: $color-lighter;
+                color: $color-muted;
             }
         }
 
@@ -84,7 +84,7 @@
 
             > dt {
                 margin-bottom: 1rem;
-                font-weight: $font-weight-title;
+                font-weight: $font-weight-solid;
             }
 
             > dd {
@@ -141,7 +141,7 @@
                 table-layout: fixed;
 
                 caption {
-                    color: $color-lighter;
+                    color: $color-muted;
                     text-align: right;
                 }
 

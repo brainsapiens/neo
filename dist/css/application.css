@@ -47,6 +47,10 @@ a {
   transition: all 0.2s;
 }
 
+.mod_no-touchevents a:hover, .mod_no-touchevents a.hover {
+  color: #1a334d;
+}
+
 button,
 input,
 select,
@@ -197,9 +201,9 @@ table {
   max-height: 20rem;
   overflow-y: auto;
   background: #fff;
-  border-right: 1px solid rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
 }
 
 .ui-autocomplete .ui-menu-item-wrapper {
@@ -216,9 +220,9 @@ table {
   display: none;
   padding: .75rem 1rem 1rem;
   background: #fff;
-  border-right: 1px solid rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
 }
 
 .ui-datepicker .ui-datepicker-header {
@@ -238,7 +242,7 @@ table {
   display: block;
   border-top: .5rem solid transparent;
   border-bottom: .5rem solid transparent;
-  border-right: 0.75rem solid rgba(0, 0, 0, 0.6);
+  border-right: 0.75rem solid #999;
 }
 
 .ui-datepicker .ui-datepicker-header .ui-datepicker-title {
@@ -259,7 +263,7 @@ table {
   display: block;
   border-top: .5rem solid transparent;
   border-bottom: .5rem solid transparent;
-  border-left: 0.75rem solid rgba(0, 0, 0, 0.6);
+  border-left: 0.75rem solid #999;
 }
 
 .ui-datepicker-calendar {
@@ -286,7 +290,7 @@ table {
 }
 
 .ui-datepicker-calendar tbody td.ui-datepicker-current-day .ui-state-default {
-  background: rgba(0, 0, 0, 0.8);
+  background: #666;
   color: #fff;
 }
 
@@ -295,7 +299,7 @@ table {
   display: block;
   width: 100%;
   padding: .5rem 2.5rem .5rem .75rem;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid #ccc;
   cursor: default;
 }
 
@@ -309,7 +313,7 @@ table {
           transform: translateY(-50%);
   display: block;
   pointer-events: none;
-  border-top: 0.4rem solid rgba(0, 0, 0, 0.6);
+  border-top: 0.4rem solid #999;
   border-right: .4rem solid transparent;
   border-left: .4rem solid transparent;
 }
@@ -325,7 +329,7 @@ table {
 }
 
 .ui-selectmenu-button .ui-selectmenu-text.ui-state-placeholder {
-  color: rgba(0, 0, 0, 0.6);
+  color: #999;
 }
 
 .ui-selectmenu-menu {
@@ -341,9 +345,9 @@ table {
 .ui-selectmenu-menu .ui-menu {
   max-height: calc(14.5rem + 1px);
   background: #fff;
-  border-right: 1px solid rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
   overflow: auto;
 }
 
@@ -362,7 +366,7 @@ table {
 .button {
   display: inline-block;
   padding: .5rem 1.5rem;
-  background: rgba(0, 0, 0, 0.8);
+  background: #666;
   color: #fff;
   text-align: center;
 }
@@ -384,7 +388,7 @@ a.button {
   display: block;
   width: 100%;
   padding: .5rem .75rem;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid #ccc;
 }
 
 .input > input:disabled {
@@ -403,7 +407,7 @@ a.button {
   display: block;
   width: 100%;
   padding: .5rem 2.5rem .5rem .75rem;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid #ccc;
 }
 
 .select__tag + .select__arrow {
@@ -416,7 +420,7 @@ a.button {
           transform: translateY(-50%);
   display: block;
   pointer-events: none;
-  border-top: 0.4rem solid rgba(0, 0, 0, 0.6);
+  border-top: 0.4rem solid #999;
   border-right: .4rem solid transparent;
   border-left: .4rem solid transparent;
 }
@@ -433,7 +437,7 @@ a.button {
   display: block;
   width: 100%;
   padding: .5rem .75rem;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid #ccc;
 }
 
 .textarea > textarea:disabled {
@@ -470,7 +474,7 @@ a.button {
   left: 0;
   z-index: 1;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid #ccc;
 }
 
 .checkbox__tag + .checkbox__box::after {
@@ -525,7 +529,7 @@ a.button {
   left: 0;
   z-index: 1;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid #ccc;
   border-radius: 50%;
 }
 
@@ -735,7 +739,7 @@ a.button {
 
 .wysiwyg > blockquote {
   padding-left: 4rem;
-  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-left: 1px solid #ccc;
 }
 
 .wysiwyg > blockquote:not(:first-child) {
@@ -781,7 +785,7 @@ a.button {
 
 .wysiwyg > figure > figcaption {
   margin-top: 1rem;
-  color: rgba(0, 0, 0, 0.6);
+  color: #999;
 }
 
 .wysiwyg > dl:not(:first-child) {
@@ -864,7 +868,7 @@ a.button {
 }
 
 .wysiwyg__table > table caption {
-  color: rgba(0, 0, 0, 0.6);
+  color: #999;
   text-align: right;
 }
 

@@ -46,22 +46,22 @@ $border-radius-base: .5rem;
 // Colors
 $color-base: #000;
 
-$color-light: rgba($color-base, .8);
-$color-lighter: rgba($color-base, .6);
-$color-lightest: rgba($color-base, .4);
+$color-light: #666;
+$color-muted: #999;
+$color-minor: #ccc;
 
-$color-brand: $color-base;
+$color-brand: neo;
 
 $color-error: #f00;
 $color-warning: #f90;
 $color-success: #390;
 
 // Fonts
-$font-family-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$font-family-title: $font-family-text;
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$font-family-alt: $font-family-base;
 
-$font-weight-text: 400;
-$font-weight-title: 700;
+$font-weight-base: 400;
+$font-weight-solid: 700;
 
 // Forms
 $checkbox-size: 2rem;

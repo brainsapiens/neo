@@ -1,11 +1,10 @@
 {
-  "name": "neo2",
+  "name": "neo",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^9.1.1",
-    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "del": "^3.0.0",
     "gulp": "gulpjs/gulp.git#4.0",

@@ -30,8 +30,8 @@ body {
     min-height: 100vh;
     background: #fff;
     color: $color-base;
-    font-family: $font-family-text;
-    font-weight: $font-weight-text;
+    font-family: $font-family-base;
+    font-weight: $font-weight-base;
 
     @if $enable-mq == false {
         min-width: $width;
@@ -51,7 +51,8 @@ main { // 1
 }
 
 a {
-    color: $color-link;
+    @include link-base;
+
     transition: all $transition-duration-base;
 }
 
