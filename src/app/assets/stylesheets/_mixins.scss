@@ -19,13 +19,13 @@
     }
 }
 
-@mixin mq-custom($mq-range, $mq-breakpoint) {
-    $mq-device: "";
-    @if $enable-mq-device == true {
-        $mq-device: "-device";
+@mixin mq-custom($mq-range, $mq-breakpoint, $mq-device: $enable-mq-device) {
+    $device: "";
+    @if $mq-device == true {
+        $device: "-device";
     }
 
-    @media all and (#{$mq-range}#{$mq-device}-width: $mq-breakpoint) {
+    @media all and (#{$mq-range}#{$device}-width: $mq-breakpoint) {
         @content;
     }
 }
