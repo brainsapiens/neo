@@ -3,6 +3,8 @@
 @if $enable-inputs == true {
     .input {
         > input {
+            @include placeholder;
+
             display: block;
             width: 100%;
             padding: .5rem .75rem;

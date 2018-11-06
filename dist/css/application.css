@@ -391,6 +391,22 @@ a.button {
   border: 1px solid #ccc;
 }
 
+.input > input::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+.input > input::-moz-placeholder {
+  color: #ccc;
+}
+
+.input > input:-ms-input-placeholder {
+  color: #ccc;
+}
+
+.input > input:-moz-placeholder {
+  color: #ccc;
+}
+
 .input > input:disabled {
   opacity: .2;
 }
@@ -438,6 +454,22 @@ a.button {
   width: 100%;
   padding: .5rem .75rem;
   border: 1px solid #ccc;
+}
+
+.textarea > textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+.textarea > textarea::-moz-placeholder {
+  color: #ccc;
+}
+
+.textarea > textarea:-ms-input-placeholder {
+  color: #ccc;
+}
+
+.textarea > textarea:-moz-placeholder {
+  color: #ccc;
 }
 
 .textarea > textarea:disabled {
