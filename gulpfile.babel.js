@@ -24,7 +24,7 @@ const config = require('./gulpfile.config.json');
 // Clean
 
 function clean() {
-    del('dist/');
+    return del('dist/');
 }
 
 // Modernizr
@@ -120,7 +120,7 @@ function files() {
 
 // Server
 function connectServer() {
-    connect.server(config.options.connect);
+    return connect.server(config.options.connect);
 }
 
 // Watch
