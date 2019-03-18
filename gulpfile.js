@@ -24,7 +24,7 @@ const config = require('./gulpfile.config.json');
 // Clean
 
 function clean() {
-    return del('dist/');
+    return del(config.paths.dest);
 }
 
 // Modernizr
@@ -99,14 +99,14 @@ function vendorFonts() {
 
 // Fonts
 function copyFonts() {
-    return src(config.paths.fonts.src, {since: lastRun(fonts)})
+    return src(config.paths.fonts.src, {since: lastRun(copyFonts)})
         .pipe(dest(config.paths.fonts.dest))
         .pipe(connect.reload());
 }
 
 // Images
 function optimizeImages() {
-    return src(config.paths.images.src, {since: lastRun(images)})
+    return src(config.paths.images.src, {since: lastRun(optimizeImages)})
         .pipe(imagemin([
             imagemin.gifsicle(config.options.imagemin.gifsicle),
             imagemin.jpegtran(config.options.imagemin.jpegtran),
@@ -119,7 +119,7 @@ function optimizeImages() {
 
 // Files
 function copyFiles() {
-    return src(config.paths.files.src, {since: lastRun(files)})
+    return src(config.paths.files.src, {since: lastRun(copyFiles)})
         .pipe(dest(config.paths.files.dest))
         .pipe(connect.reload());
 }

@@ -1,5 +1,6 @@
 {
   "paths": {
+    "dest": "dist/",
     "views": {
       "src": "src/app/views/*.pug",
       "watch": "src/app/views/**/*.pug",
@@ -29,15 +30,15 @@
     },
     "scripts": {
       "src": [
-        "src/app/assets/javascripts/config.babel.js",
-        "src/app/assets/javascripts/variables.babel.js",
-        "src/app/assets/javascripts/utilities.babel.js",
-        "src/app/assets/javascripts/components/jquery_ui/widgets/autocomplete.babel.js",
-        "src/app/assets/javascripts/components/jquery_ui/widgets/datepicker.babel.js",
-        "src/app/assets/javascripts/components/jquery_ui/widgets/selectmenu.babel.js",
-        "src/app/assets/javascripts/components/fonts.babel.js",
-        "src/app/assets/javascripts/components/icons.babel.js",
-        "src/app/assets/javascripts/components/wysiwyg.babel.js"
+        "src/app/assets/javascripts/config.js",
+        "src/app/assets/javascripts/variables.js",
+        "src/app/assets/javascripts/utilities.js",
+        "src/app/assets/javascripts/components/jquery_ui/widgets/autocomplete.js",
+        "src/app/assets/javascripts/components/jquery_ui/widgets/datepicker.js",
+        "src/app/assets/javascripts/components/jquery_ui/widgets/selectmenu.js",
+        "src/app/assets/javascripts/components/fonts.js",
+        "src/app/assets/javascripts/components/icons.js",
+        "src/app/assets/javascripts/components/wysiwyg.js"
       ],
       "watch": "src/app/assets/javascripts/**/*.js",
       "concat": "application.js",

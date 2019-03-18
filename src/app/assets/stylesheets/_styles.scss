@@ -15,7 +15,6 @@ html {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
 
     &.mod_flexboxtweener { // 1
         height: 100%;
@@ -60,8 +59,7 @@ button,
 input,
 select,
 textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    appearance: none;
     background: none;
     border: none;
     color: inherit;
