@@ -1,3 +1,4 @@
+const {src, dest, parallel, watch, lastRun, series} = require('gulp');
 const autoprefixer = require('autoprefixer');
 const cp = require('child_process');
 const del = require('del');
@@ -16,7 +17,6 @@ const stylelint = require('gulp-stylelint');
 const uglify = require('gulp-uglify');
 const minifyCSS = require('postcss-clean');
 const validateHTML = require('posthtml-w3c');
-const {src, dest, parallel, watch, lastRun, series} = require('gulp');
 
 // Config
 const config = require('./gulpfile.config.json');
@@ -28,14 +28,16 @@ function clean() {
 }
 
 // Modernizr
-function modernizr() {
+function buildModernizr() {
     return cp.exec('./node_modules/modernizr/bin/modernizr -c ./modernizr.config.json -d ./dist/js/modernizr.js -u');
 }
 
 // Views
-function views() {
+function buildViews() {
     return src(config.paths.views.src)
-        .pipe(plumber())
+        .pipe(plumber(function (error) {
+            error.messageFormatted;
+        }))
         .pipe(changed(config.paths.views.dest))
         .pipe(pug(config.options.pug))
         .pipe(plumber.stop())
@@ -54,9 +56,11 @@ function vendorStyles() {
 }
 
 // Styles
-function styles() {
+function buildStyles() {
     return src(config.paths.styles.src)
-        .pipe(plumber())
+        .pipe(plumber(function (error) {
+            error.messageFormatted;
+        }))
         .pipe(sass(config.options.sass))
         .pipe(postcss([
             autoprefixer()
@@ -75,9 +79,11 @@ function vendorScripts() {
 }
 
 // Scripts
-function scripts() {
+function buildScripts() {
     return src(config.paths.scripts.src)
-        .pipe(plumber())
+        .pipe(plumber(function (error) {
+            error.messageFormatted;
+        }))
         .pipe(babel())
         .pipe(concat(config.paths.scripts.concat))
         .pipe(plumber.stop())
@@ -92,14 +98,14 @@ function vendorFonts() {
 }
 
 // Fonts
-function fonts() {
+function copyFonts() {
     return src(config.paths.fonts.src, {since: lastRun(fonts)})
         .pipe(dest(config.paths.fonts.dest))
         .pipe(connect.reload());
 }
 
 // Images
-function images() {
+function optimizeImages() {
     return src(config.paths.images.src, {since: lastRun(images)})
         .pipe(imagemin([
             imagemin.gifsicle(config.options.imagemin.gifsicle),
@@ -112,7 +118,7 @@ function images() {
 }
 
 // Files
-function files() {
+function copyFiles() {
     return src(config.paths.files.src, {since: lastRun(files)})
         .pipe(dest(config.paths.files.dest))
         .pipe(connect.reload());
@@ -125,12 +131,12 @@ function connectServer() {
 
 // Watch
 function watchChanges () {
-    watch(config.paths.views.watch, views);
-    watch(config.paths.styles.watch, styles);
-    watch(config.paths.scripts.watch, scripts);
-    watch(config.paths.fonts.src, fonts);
-    watch(config.paths.images.src, images);
-    watch(config.paths.files.src, files);
+    watch(config.paths.views.watch, buildViews);
+    watch(config.paths.styles.watch, buildStyles);
+    watch(config.paths.scripts.watch, buildScripts);
+    watch(config.paths.fonts.src, copyFonts);
+    watch(config.paths.images.src, optimizeImages);
+    watch(config.paths.files.src, copyFiles);
 }
 
 // Lint views
@@ -157,41 +163,8 @@ function lintScripts() {
 }
 
 // Tasks
-
-exports.clean = clean;
-
-exports.modernizr = modernizr;
-
-exports.views = views;
-
-exports.vendorStyles = vendorStyles;
-
-exports.styles = styles;
-
-exports.vendorScripts = vendorScripts;
-
-exports.scripts = scripts;
-
-exports.vendorFonts = vendorFonts;
-
-exports.fonts = fonts;
-
-exports.images = images;
-
-exports.images = images;
-
-exports.connectServer = connectServer;
-
-exports.watchChanges = watchChanges;
-
-exports.lintViews = lintViews;
-
-exports.lintStyles = lintStyles;
-
-exports.lintScripts = lintScripts;
-
-exports.default = parallel(connectServer,watchChanges);
-
-exports.build = series(clean, modernizr, parallel(views, vendorStyles, styles, vendorScripts, scripts, vendorFonts, fonts, images, files));
+exports.default = parallel(connectServer, watchChanges);
 
 exports.lint = parallel(lintViews, lintStyles, lintScripts);
+
+exports.build = series(clean, buildModernizr, parallel(buildViews, vendorStyles, buildStyles, vendorScripts, buildScripts, vendorFonts, copyFonts, optimizeImages, copyFiles));
